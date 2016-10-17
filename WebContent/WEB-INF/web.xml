@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>hw_1</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>AwsServlet</display-name>
+    <servlet-name>AwsServlet</servlet-name>
+    <servlet-class>servlet.AwsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AwsServlet</servlet-name>
+    <url-pattern>/AwsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Way REST Service</servlet-name>
+    <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+    <init-param>
+      <param-name>javax.ws.rs.Application</param-name>
+      <param-value>rest.RestApplication</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Way REST Service</servlet-name>
+    <url-pattern>/rest/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>WorkTime</display-name>
+    <servlet-name>WorkTime</servlet-name>
+    <servlet-class>servlet.WorkTime</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WorkTime</servlet-name>
+    <url-pattern>/WorkTime</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StatusServlet</display-name>
+    <servlet-name>StatusServlet</servlet-name>
+    <servlet-class>servlet.StatusServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StatusServlet</servlet-name>
+    <url-pattern>/StatusServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RealTimeServlet</display-name>
+    <servlet-name>RealTimeServlet</servlet-name>
+    <servlet-class>servlet.RealTimeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RealTimeServlet</servlet-name>
+    <url-pattern>/RealTimeServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
